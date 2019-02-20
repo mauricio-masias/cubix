@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /classlib
+Disallow: /controler
+Disallow: /css
+Disallow: /dbconn
+Disallow: /includes
+Disallow: /js
+
+
+
