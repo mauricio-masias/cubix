@@ -31,6 +31,42 @@
     footer div{width:415px;margin:0 auto;padding-top:12px}
     
     /* test */
+    .row.header{with:100%;height:500px;}
+    .row.header div{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .row.header div img{
+         max-width: 50%;
+    }
+
+    .row.belowheader{width:100%;margin:50px 0;}
+    .row.belowheader .date{ 
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        color:#fff;
+    }
+    .row.belowheader .date h3{font-size:40px;line-height:42px;width:100%;text-align: center}
+    .row.belowheader .date h4{font-size:30px;line-height:32px;width:100%;text-align: center;margin:20px 0;}
+    .row.belowheader .date h5{font-size:20px;line-height:22px;width:100%;text-align: center}
+
+    .boxes{width:100%;margin:100px 0;}
+    .box{color:#fff;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        font-size:20px;
+        line-height: 22px;
+        align-self: flex-start;
+    }
+    .box a,.box a:visited{color:#f00;}
+    .box.b1{text-align: left}
+    .box.b2{text-align: center}
+    .box.b3{text-align: right}
+    .box ul{list-style: none;margin:0;padding:0;}
 
     /* end test */
 

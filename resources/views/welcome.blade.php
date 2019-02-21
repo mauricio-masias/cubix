@@ -58,7 +58,7 @@
  
     <div class="row header">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            {!! $boxes[4]['box_content'] !!}
+            <img src="/img/portfolio/placeholder.png" alt="Cubix London" width="500">
         </div>
     </div>
 
@@ -72,15 +72,15 @@
 
     <div class="row boxes">
         <div class="col-sm-12 col-md-6 col-lg-4 box b1">
-            {!! $boxes[1]['box_content'] !!}
+            <div>{!! $boxes[1]['box_content'] !!}</div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-4 box b2">
-            {!! $boxes[2]['box_content'] !!}
+             <div>{!! $boxes[2]['box_content'] !!}</div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-4 box b3">
-            {!! $boxes[3]['box_content'] !!}
+             <div>{!! $boxes[3]['box_content'] !!}</div>
         </div>
     </div>
 
