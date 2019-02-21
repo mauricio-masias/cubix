@@ -29,77 +29,81 @@
 
     footer{position:fixed;background:rgba(0,0,0,.5);color:#fff;font-size:12px;bottom:0;width:100%;height:35px}
     footer div{width:415px;margin:0 auto;padding-top:12px}
-    header{color:#fff;background:rgba(0,0,0,.5);width:420px;margin:0 auto;padding:25px 40px}
+    
+    /* test */
 
-    /* rotate */
-.movement2 {
-    -webkit-animation-name: rotate; 
-    -webkit-animation-duration: 240s; 
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    -moz-animation-name: rotate; 
-    -moz-animation-duration: 240s; 
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-timing-function: linear;
-    animation-name: rotate; 
-    animation-duration: 240s; 
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
+    /* end test */
 
-
-@-webkit-keyframes rotate {
-    from {-webkit-transform: rotate(0deg);}
-    to {-webkit-transform: rotate(-360deg);}
-}
-
-@-moz-keyframes rotate {
-    from {-moz-transform: rotate(0deg);}
-    to {-moz-transform: rotate(-360deg);}
-}
-
-@keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(-360deg);}
-}
-
-   *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
-   video {position: fixed;top: 50%;left: 50%;min-width: 100%;min-height: 100%;width: auto;height: auto;z-index: -100;transform: translateX(-50%) translateY(-50%);transition: 1s opacity;}
+    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+    
+    video {position: fixed;top: 50%;left: 50%;min-width: 100%;min-height: 100%;width: auto;height: auto;z-index: -100;transform: translateX(-50%) translateY(-50%);transition: 1s opacity;}
     .video-background{background:#000;position:fixed;top:0;right:0;bottom:0;left:0;z-index:-99}
     .video-background iframe,
     .video-foreground{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
     @media (min-aspect-ratio:16 / 9){.video-foreground{height:300%;top:-100%}}
     @media (max-aspect-ratio:16 / 9){.video-foreground{width:300%;left:-100%}}
+    
     @media screen and (max-width:768px){
         #player{display:none}
         .video-foreground{background:url(../img/wave5.jpg) no-repeat;background-position:center;background-size:cover}
     }
 
+    /* rotate */
+    .movement2 {
+        -webkit-animation-name: rotate; 
+        -webkit-animation-duration: 240s; 
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-name: rotate; 
+        -moz-animation-duration: 240s; 
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+        animation-name: rotate; 
+        animation-duration: 240s; 
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
 
+    @-webkit-keyframes rotate {
+        from {-webkit-transform: rotate(0deg);}
+        to {-webkit-transform: rotate(-360deg);}
+    }
+
+    @-moz-keyframes rotate {
+        from {-moz-transform: rotate(0deg);}
+        to {-moz-transform: rotate(-360deg);}
+    }
+
+    @keyframes rotate {
+        from {transform: rotate(0deg);}
+        to {transform: rotate(-360deg);}
+    }
+    
+    
        </style>
+    <!-- <link rel="stylesheet" href="/css/polygons.css">  --> 
     
-    
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
 
     <!-- GA code -->
-   <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','{{ asset("/js/ganalytics.js") }}','ga');ga('create', '{{$pages['page_ga_code']}}', 'auto');ga('send', 'pageview');</script>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','{{ asset("/js/ganalytics.js") }}','ga');ga('create', '{{$pages['page_ga_code']}}', 'auto');ga('send', 'pageview');</script>
  	<!-- GA code end -->
 
     @if($pages['page_extra_js']!= null)

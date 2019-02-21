@@ -1,15 +1,56 @@
 @include('includes.header')
     
-
-<div class="video-background movement2">
-<div class="video-foreground">
-
-<video poster="{{ asset('/img/portfolio/placeholder.jpg') }}" id="bgvid" playsinline autoplay muted loop>
-<source src="{{ asset('/vid/waves-mmb.webm') }}" type="video/webm">
-<source src="{{ asset('/vid/waves-mmb.mp4') }}" type="video/mp4">
-</video>
-
-</div>
+<div class="polygon-container">
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
+    <div class="polygon"></div>
 </div>
 
 
