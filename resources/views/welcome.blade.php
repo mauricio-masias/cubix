@@ -1,7 +1,7 @@
 @include('includes.header')
     
 
-<div class="video-background">
+<div class="video-background movement2">
 <div class="video-foreground">
 
 <video poster="{{ asset('/img/portfolio/placeholder.jpg') }}" id="bgvid" playsinline autoplay muted loop>

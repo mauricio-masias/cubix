@@ -30,6 +30,39 @@
     footer{position:fixed;background:rgba(0,0,0,.5);color:#fff;font-size:12px;bottom:0;width:100%;height:35px}
     footer div{width:415px;margin:0 auto;padding-top:12px}
     header{color:#fff;background:rgba(0,0,0,.5);width:420px;margin:0 auto;padding:25px 40px}
+
+    /* rotate */
+.movement2 {
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 240s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: rotate; 
+    -moz-animation-duration: 240s; 
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    animation-name: rotate; 
+    animation-duration: 240s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+@-webkit-keyframes rotate {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(-360deg);}
+}
+
+@-moz-keyframes rotate {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(-360deg);}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(-360deg);}
+}
+
    *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
    video {position: fixed;top: 50%;left: 50%;min-width: 100%;min-height: 100%;width: auto;height: auto;z-index: -100;transform: translateX(-50%) translateY(-50%);transition: 1s opacity;}
     .video-background{background:#000;position:fixed;top:0;right:0;bottom:0;left:0;z-index:-99}
