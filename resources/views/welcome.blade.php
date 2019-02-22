@@ -58,7 +58,8 @@
  
     <div class="row header">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <img src="/img/portfolio/placeholder.png" alt="Cubix London" width="500">
+            {!! $boxes[5]['box_content'] !!}
+            <div class="description">{!! $boxes[4]['box_content'] !!}</div>    
         </div>
     </div>
 
