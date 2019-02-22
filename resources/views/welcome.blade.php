@@ -59,7 +59,9 @@
     <div class="row header">
         <div class="col-sm-12 col-md-12 col-lg-12">
             {!! $boxes[5]['box_content'] !!}
-           <!--  <div class="description">{!! $boxes[4]['box_content'] !!}</div>    -->
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 description">
+            {!! $boxes[4]['box_content'] !!}
         </div>
     </div>
 
