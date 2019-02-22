@@ -2271,9 +2271,3 @@
             transform: translate3d(-6.13939vw, 74.568vh, 100px) rotate3d(10, -5, 3, 152deg);
   }
 }
-
-body {
-  width: 100%;
-  height: 100%;
-  background: #000;
-}
