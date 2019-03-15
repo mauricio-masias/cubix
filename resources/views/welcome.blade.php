@@ -54,7 +54,7 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container">
  
     <div class="row header">
         <div class="col-sm-12 col-md-12 col-lg-12">
