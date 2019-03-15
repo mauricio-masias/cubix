@@ -53,9 +53,9 @@
     <div class="polygon"></div>
 </div>
 
-<div id="wrap" class="container wrap_404">
+<div id="wrap" class="h-100 container wrap_404">
     
-    <div class="row header show_404">
+    <div class="h-100 row show_404 align-items-center">
             
         <div>
             <h1>404</h1>
