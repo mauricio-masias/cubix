@@ -28,7 +28,9 @@
 
                 <img src="{!! $project['project_image'] !!}" alt="{!! $project['project_name'] !!}">
                 
-                <a href="{!! $project['project_url'] !!}" target="_blank">{!! $project['project_teaser'] !!} ></a>
+                <ul class="djlinks">
+                <li><a href="{!! $project['project_url'] !!}" target="_blank">{!! $project['project_teaser'] !!} ></a></li>
+                </ul>
                 
                 <div class="dj_content">{!! $project['project_text'] !!}</div>
             </div>
