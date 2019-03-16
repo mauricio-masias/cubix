@@ -18,53 +18,25 @@
 
     <div class="row boxes">
 
-        <div class="col-sm-12 col-md-6 col-lg-3 box b1">
+        @foreach ($projects as $project)
+                
+       
+
+        <div class="col-sm-12 col-md-6 col-lg-3 djbox b{{$loop->iteration}}">
             <div>
-                {!! $projects[5]['project_name'] !!}
+                {!! $project['project_name'] !!}
 
-                {!! $projects[5]['project_image'] !!}
+                {!! $project['project_image'] !!}
                 
-                <a href="{!! $projects[5]['project_url'] !!}" target="_blank">Visit Website</a>
+                <a href="{!! $project['project_url'] !!}" target="_blank">Visit Website</a>
                 
-                {!! $projects[5]['project_text'] !!}
+                {!! $project['project_text'] !!}
             </div>
         </div>
 
-        <div class="col-sm-12 col-md-6 col-lg-3 box b2">
-             <div>
-                {!! $projects[5]['project_name'] !!}
+        @endforeach
 
-                {!! $projects[5]['project_image'] !!}
-                
-                <a href="{!! $projects[5]['project_url'] !!}" target="_blank">Visit Website</a>
-                
-                {!! $projects[5]['project_text'] !!}
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-3 box b2">
-             <div>
-                {!! $projects[5]['project_name'] !!}
-
-                {!! $projects[5]['project_image'] !!}
-                
-                <a href="{!! $projects[5]['project_url'] !!}" target="_blank">Visit Website</a>
-                
-                {!! $projects[5]['project_text'] !!}
-            </div>
-        </div>
-
-         <div class="col-sm-12 col-md-6 col-lg-3 box b4">
-            <div>
-                {!! $projects[5]['project_name'] !!}
-
-                {!! $projects[5]['project_image'] !!}
-                
-                <a href="{!! $projects[5]['project_url'] !!}" target="_blank">Visit Website</a>
-                
-                {!! $projects[5]['project_text'] !!}
-            </div>
-        </div>
+        
 
     </div>
 
