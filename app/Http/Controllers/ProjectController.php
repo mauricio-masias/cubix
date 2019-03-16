@@ -114,11 +114,11 @@ class ProjectController extends Controller
 
         //retina image
         //Image::make($request->file('image'))->resize(500,null)->crop(500, 279)->save($path.$file_name_retina);
-        Image::make($request->file('image'))->fit(500,279,function($constraint){$constraint->upsize();})->save($path.$file_name_retina);
+        Image::make($request->file('image'))->fit(464,632,function($constraint){$constraint->upsize();})->save($path.$file_name_retina);
 
         //half size
         //Image::make($request->file('image'))->resize(250,null)->crop(250, 140)->save($path.$file_name_normal);
-        Image::make($request->file('image'))->fit(250,140,function($constraint){$constraint->upsize();})->save($path.$file_name_normal);
+        Image::make($request->file('image'))->fit(232,316,function($constraint){$constraint->upsize();})->save($path.$file_name_normal);
 
 
         //$file->move($path, $file_name );

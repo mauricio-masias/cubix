@@ -1,57 +1,6 @@
 @include('includes.header')
     
-<div class="polygon-container">
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-    <div class="polygon"></div>
-</div>
+@include('includes.polygon')
 
 <div id="wrap" class="h-100 container wrap_404">
     
