@@ -23,14 +23,14 @@
        
 
         <div class="col-sm-12 col-md-6 col-lg-3 djbox b{{$loop->iteration}}">
-            <div>
-                {!! $project['project_name'] !!}
+            <div class="djitem">
+                <h2>{!! $project['project_name'] !!}</h2>
 
-                {!! $project['project_image'] !!}
+                <img src="{!! $project['project_image'] !!}" alt="{!! $project['project_name'] !!}">
                 
-                <a href="{!! $project['project_url'] !!}" target="_blank">Visit Website</a>
+                <a href="{!! $project['project_url'] !!}" target="_blank">{!! $project['project_teaser'] !!} ></a>
                 
-                {!! $project['project_text'] !!}
+                <div class="dj_content">{!! $project['project_text'] !!}</div>
             </div>
         </div>
 
