@@ -11,8 +11,9 @@
             
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 desc_container">
-            <div class="description">{{$page['page_subtitle']}}</div>
-            <p><a href="/">< Back</a></p>
+            <div class="description">{{$page['page_subtitle']}}<br/>
+                <a href="/">< Back</a>
+            </div>
         </div>
     </div>
     
