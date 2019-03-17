@@ -31,9 +31,10 @@ class DjsController extends Controller
         //$boxes = Box::all()->where('box_active', '=', 1)->toArray();
         //$jobs = Job::all()->where('job_active', '=', 1)->sortByDesc('job_order')->toArray();
         //$menus = Menu::all()->where('menu_active', '=', 1)->sortBy('menu_id')->toArray();
-        $pagex = Page::all()->where('id', '=', 1)->toArray();
-        $pages = $pagex[0];
+        $pagex = Page::all()->toArray();
+        $site = $pagex[0];
+        $page = $pagex[1];
 
-        return view('djs',compact('projects','pages'));
+        return view('djs',compact('projects','site','page'));
     }
 }

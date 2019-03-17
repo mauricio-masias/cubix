@@ -8,15 +8,16 @@
     <meta charset="utf-8">
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{$pages['page_title']}} : {{$pages['page_subtitle']}}</title>
+    <title>{{$site['page_title']}} : {!! !empty($page) ? $page['page_title'] : $site['page_subtitle'] !!}</title>
+
     <link rel="canonical" href="http://masias.co.uk/" />
-    <meta name="description" content="{{$pages['page_meta_description']}}">
+    <meta name="description" content="{{$site['page_meta_description']}}">
     
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
 
-    @if($pages['page_og'] != null){!! $pages['page_og'] !!}@endif
+    @if($site['page_og'] != null){!! $site['page_og'] !!}@endif
 	
-    @if($pages['page_card'] != null){!! $pages['page_card'] !!}@endif
+    @if($site['page_card'] != null){!! $site['page_card'] !!}@endif
     
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
@@ -48,11 +49,11 @@
 
 
     <!-- GA code -->
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','{{ asset("/js/ganalytics.js") }}','ga');ga('create', '{{$pages['page_ga_code']}}', 'auto');ga('send', 'pageview');</script>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','{{ asset("/js/ganalytics.js") }}','ga');ga('create', '{{$site['page_ga_code']}}', 'auto');ga('send', 'pageview');</script>
  	<!-- GA code end -->
 
-    @if($pages['page_extra_js']!= null)
-    {!! $pages['page_extra_js'] !!}
+    @if($site['page_extra_js']!= null)
+    {!! $site['page_extra_js'] !!}
     @endif
 
 </head>

@@ -36,8 +36,8 @@ class WelcomeController extends Controller
         //$jobs = Job::all()->where('job_active', '=', 1)->sortByDesc('job_order')->toArray();
         //$menus = Menu::all()->where('menu_active', '=', 1)->sortBy('menu_id')->toArray();
         $pagex = Page::all()->where('id', '=', 1)->toArray();
-        $pages = $pagex[0];
+        $site = $pagex[0];
 
-        return view('welcome',compact('boxes','pages'));
+        return view('welcome',compact('boxes','site'));
     }
 }
