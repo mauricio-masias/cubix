@@ -56,6 +56,10 @@
     {!! $site['page_extra_js'] !!}
     @endif
 
+    @if(!empty($page) && $page['page_extra_js']!= null)
+    {!! $page['page_extra_js'] !!}
+    @endif
+
 </head>
 
 
