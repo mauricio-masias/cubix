@@ -10,9 +10,12 @@
 @if($site['page_footer_email']!= null)|&nbsp;&nbsp;&nbsp;<a href="mailto:{{$site['page_footer_email']}}">{{$site['page_footer_email']}}</a>
 @endif
 </div>   	
-</footer> 
+</footer>
+
+{{-- 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/scripts.min.js"></script>
+--}}
 
 @if($site['page_extra_js_footer']!= null)
 {!! $site['page_extra_js_footer'] !!}
