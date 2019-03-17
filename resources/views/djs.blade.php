@@ -24,11 +24,9 @@
             <div class="djitem">
                 <h2>{!! $project['project_name'] !!}</h2>
 
+                <a href="{!! $project['project_url'] !!}" target="_blank">
                 <img src="{!! $project['project_image'] !!}" alt="{!! $project['project_name'] !!}">
-                
-                <ul class="djlinks">
-                <li><a href="{!! $project['project_url'] !!}" target="_blank">{!! $project['project_teaser'] !!} ></a></li>
-                </ul>
+                </a>
                 
                 <div class="dj_content">{!! $project['project_text'] !!}</div>
             </div>
