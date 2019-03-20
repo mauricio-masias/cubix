@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Page;
 
-class DjsController extends Controller
+class LiveMusiciansController extends Controller
 {
     
     /**
@@ -26,15 +26,16 @@ class DjsController extends Controller
     public function index()
     {
 
-    	$projects = Project::all()->where('project_active', '=', 1)->where('project_categories', '=', 'dj')->sortByDesc('project_order')->toArray();
+    	$projects = Project::all()->where('project_active', '=', 1)->where('project_categories', '=', 'live_musician')->sortByDesc('project_order')->toArray();
+
         //$categories = Category::all()->where('category_active', '=', 1)->sortByDesc('category_order')->toArray();
         //$boxes = Box::all()->where('box_active', '=', 1)->toArray();
         //$jobs = Job::all()->where('job_active', '=', 1)->sortByDesc('job_order')->toArray();
         //$menus = Menu::all()->where('menu_active', '=', 1)->sortBy('menu_id')->toArray();
         $pagex = Page::all()->toArray();
         $site = $pagex[0];
-        $page = $pagex[1];
+        $page = $pagex[2];
 
-        return view('live_musicians',compact('projects','site','page'));
+        return view('djs',compact('projects','site','page'));
     }
 }

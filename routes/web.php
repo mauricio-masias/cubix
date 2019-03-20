@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/', 'WelcomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/djs', 'DjsController@index')->name('djs');
+Route::get('/live-musicians', 'LiveMusiciansController@index')->name('live-musicians');
 Route::resource('projects','ProjectController');
 Route::resource('categories','CategoryController');
 Route::resource('menus','MenuController');
