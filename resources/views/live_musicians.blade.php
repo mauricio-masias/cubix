@@ -24,22 +24,28 @@
     <div class="row boxes">
 
         @foreach ($projects as $project)
+        
+            @foreach (unserialize($project['project_categories']) as $cat)
                 
-        <div class="col-sm-12 col-md-6 col-lg-4 djbox b{{$loop->iteration}}">
-            <div class="djitem">
-                <h2>{!! $project['project_name'] !!}</h2>
+                @if($cat == 'live_musicians') 
+                
+                     <div class="col-sm-12 col-md-6 col-lg-3 djbox b{{$loop->iteration}}">
+                        <div class="djitem">
+                            <h2>{!! $project['project_name'] !!}</h2>
 
-                <a href="{!! $project['project_url'] !!}" target="_blank">
-                <img src="{!! $project['project_image'] !!}" alt="{!! $project['project_name'] !!}">
-                </a>
-                
-                <div class="dj_content">{!! $project['project_text'] !!}</div>
-            </div>
-        </div>
+                            <a href="{!! $project['project_url'] !!}" target="_blank">
+                            <img src="{!! $project['project_image'] !!}" alt="{!! $project['project_name'] !!}">
+                            </a>
+                            
+                            <div class="dj_content">{!! $project['project_text'] !!}</div>
+                        </div>
+                    </div>
+
+                @endif 
+            
+            @endforeach
 
         @endforeach
-
-        
 
     </div>
 

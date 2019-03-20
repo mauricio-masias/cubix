@@ -26,7 +26,7 @@ class LiveMusiciansController extends Controller
     public function index()
     {
 
-    	$projects = Project::all()->where('project_active', '=', 1)->where('project_categories', 'like', '%live_musician%')->sortByDesc('project_order')->toArray();
+    	$projects = Project::all()->where('project_active', '=', 1)->sortByDesc('project_order')->toArray();
 
         //$categories = Category::all()->where('category_active', '=', 1)->sortByDesc('category_order')->toArray();
         //$boxes = Box::all()->where('box_active', '=', 1)->toArray();
@@ -36,6 +36,6 @@ class LiveMusiciansController extends Controller
         $site = $pagex[0];
         $page = $pagex[2];
 
-        return view('djs',compact('projects','site','page'));
+        return view('live_musicians',compact('projects','site','page'));
     }
 }
