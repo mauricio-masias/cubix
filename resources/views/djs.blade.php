@@ -23,13 +23,17 @@
 
     <div class="row boxes">
 
+        @php
+        {{-- $counter = 0; --}}
+        @endphp
+
         @foreach ($projects as $project)
         
             @foreach (unserialize($project['project_categories']) as $cat)
                 
                 @if($cat == 'dj') 
                 
-                     <div class="col-sm-12 col-md-6 col-lg-3 djbox b{{$loop->iteration}}">
+                     <div class="col-sm-12 col-md-6 col-lg-3 djbox b{{$counter++}}">
                         <div class="djitem">
                             <h2>{!! $project['project_name'] !!}</h2>
 
