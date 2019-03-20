@@ -24,7 +24,7 @@
     <div class="row boxes">
 
         @php
-        {{-- $counter = 0; --}}
+        $counter = 0;
         @endphp
 
         @foreach ($projects as $project)
