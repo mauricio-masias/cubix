@@ -27,7 +27,7 @@
         
             @foreach (unserialize($project['project_categories']) as $cat)
                 
-                @if($cat == 'live_musicians') 
+                @if($cat == 'live_musician') 
                 
                      <div class="col-sm-12 col-md-6 col-lg-3 djbox b{{$loop->iteration}}">
                         <div class="djitem">
