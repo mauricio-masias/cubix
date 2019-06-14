@@ -30,13 +30,25 @@ classer.prototype.swapImages = function(d){
   		mmb.swap=1;
 	   	var ext = (d==1)? '-2x.jpg':'.jpg';
 
-		$('.imgcontainer img').each(function(){
+		$('.imgcontainer img')
+		.each(function(){
 			var src = $(this).attr('src');
 			var name = $(this).attr('longdesc');
 			var src2x = src.slice(0,-15);
 			src2x = src2x + name + ext;
 			$(this).attr('src',src2x);
-		});
+		})
+		.promise().done( function(){ 
+			grid.masonry({
+			  //isInitLayout: false,
+			  itemSelector: '.item',
+			  //layoutMode: 'fitRows',
+			  percentPosition:true,
+			  horizontalOrder: true,
+			  
+			  columnWidth:'.grid-sizer'
+			});
+		 });
 	}
 	
 }	
@@ -112,24 +124,6 @@ $(function() {
 	
 	if(mmb.isHighDensity()){mmb.swapImages(1);
 	}else{mmb.swapImages(0);}
-
-	window.setTimeout(function(){ 
-		
-		//isotopes
-		var grid = $('.grid').imagesLoaded(function(){
-
-			grid.masonry({
-			  //isInitLayout: false,
-			  itemSelector: '.item',
-			  //layoutMode: 'fitRows',
-			  percentPosition:true,
-			  horizontalOrder: true,
-			  
-			  columnWidth:'.grid-sizer'
-			});
-		});
-
-	}, 200);
 	
 
 	//hash menu opener
