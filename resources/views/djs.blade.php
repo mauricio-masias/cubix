@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-sm-12 col-md-12 col-lg-12">
-             <a href="/">< Back</a>
+             <a href="{{ url('/') }}">< Back</a>
         </div>
        
     </div>

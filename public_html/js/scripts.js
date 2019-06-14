@@ -1,6 +1,6 @@
 function classer(){
 
-   this.uri='http://masias.co.uk/';
+   this.uri='https://cubix.club/';
    this.swap = 0;
   
 }
@@ -110,119 +110,28 @@ var player;
 
 $(function() {
 	
+	if(mmb.isHighDensity()){mmb.swapImages(1);
+	}else{mmb.swapImages(0);}
 
 	window.setTimeout(function(){ 
-		$( "li a.about" ).trigger( "click" );
-		mmb.slideContent(1,'li a.about');
-	}, 100);
-	
-	//isotopes
-	var grid = $('.grid').isotope({
-		 isInitLayout: false,
-		  itemSelector: '.item',
-		  layoutMode: 'fitRows'
-		  
-	});
-	
-	$('.showmore').on('click',function(e){
-		e.preventDefault();
-		$(this).parent().parent().parent().find('.moreinfo').slideToggle(250);
-		var text = $(this).html();
-		if(text =='+ More'){$(this).html('- Less');}else{$(this).html('+ More');}
-	});
-	
-	
-	var filters = {};
-
-	$('.filters').on( 'click', '.button', function() {
-	  var $this = $(this);
-	  // get group key
-	  var buttonGroup = $this.parents('.button-group');
-	  var filterGroup = buttonGroup.attr('data-filter-group');
-	  // set filter for group
-	  filters[ filterGroup ] = $this.attr('data-filter');
-	  // combine filters
-	  var filterValue = concatValues( filters );
-	  // set filter for Isotope
-	  grid.isotope({ filter: filterValue });
-	});
-
-	// change is-checked class on buttons
-	$('.button-group').each( function( i, buttonGroup ) {
-	  var buttonGroup = $( buttonGroup );
-	  buttonGroup.on( 'click', 'button', function() {
-		buttonGroup.find('.is-checked').removeClass('is-checked');
-		$( this ).addClass('is-checked');
-	  });
-	});
-	  
-	// flatten object by concatting values
-	function concatValues( obj ) {
-	  var value = '';
-	  for ( var prop in obj ) {
-		value += obj[ prop ];
-	  }
-	  return value;
-	}
-
-
-	//menu
-	$('li a').on('click',function(e){
 		
-		var option = $(this).attr('rel');
-		if (parseInt(option) != 0){
-			e.preventDefault();
+		//isotopes
+		var grid = $('.grid').imagesLoaded(function(){
 
-			if(mmb.isHighDensity()){mmb.swapImages(1);
-			}else{mmb.swapImages(0);}
+			grid.masonry({
+			  //isInitLayout: false,
+			  itemSelector: '.item',
+			  //layoutMode: 'fitRows',
+			  percentPosition:true,
+			  horizontalOrder: true,
+			  
+			  columnWidth:'.grid-sizer'
+			});
+		});
+
+	}, 200);
 	
-			$(this).parent().toggleClass('active');
-			$(this).parent().siblings().removeClass('active');
-			
-			$('article#op'+option).toggle(); 
-			
-			if(option ==1 || option == 3){mmb.slideContent(option);}
 
-			mmb.closeAllArticles(option);
-			grid.isotope();
-		}
-		//capture analytics events desktop
-		mmb.analyticsMenu(1,option);
-	});
-	
-	$('.thumb a').on('click',function(e){
-		
-		var option = $(this).attr('rel');
-		if (parseInt(option) != 0){
-			
-			e.preventDefault();
-
-			if(mmb.isHighDensity()){mmb.swapImages(1);
-			}else{mmb.swapImages(0);}
-
-			$(this).parent().toggleClass('active');
-			$(this).parent().siblings().removeClass('active');
-			
-			$('article#op'+option).toggle();
-			mmb.closeAllArticles(option);
-			grid.isotope();
-		}
-		//capture analytics events mobile
-		mmb.analyticsMenu(2,option);
-		
-	});
-
-	$('.downloadpdf').on('click',function(){mmb.analyticsBtn(2,0);});
-
-	$('.openpdf').on('click',function(){mmb.analyticsBtn(3,0);});
-
-	$('.imgcontainer').on('click',function(){
-		var info = $(this).attr('alt');
-		var io = info.split(':');
-		mmb.analyticsBtn(1,io[1]);
-	});
-	
-	
 	//hash menu opener
 	if(window.location.hash) {
 
