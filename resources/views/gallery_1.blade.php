@@ -15,7 +15,7 @@
         </div>
 
         <div class="col-sm-12 col-md-12 col-lg-12">
-             <a href="{{ url('/') }}">< Back</a>
+             <a href="{{url('/')}}">< Back</a>
         </div>
        
     </div>
@@ -31,7 +31,7 @@
                 <div class="item @if($i % 100 == 0) item--width2 @endif">
                     <div class="cont">
                             
-                        <a class="imgcontainer"><img longdesc="snap{{$i}}" src="{{ asset('img/chapters/'.$folder.'/placeholder.png')}}" alt="image title" /></a>
+                        <a class="imgcontainer"><img src="{{ asset('img/chapters/'.$folder.'/snap'.$i.'.jpg')}}" alt="image title" /></a>
 
                     </div>
                 </div>

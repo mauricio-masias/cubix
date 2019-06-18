@@ -39,7 +39,7 @@ classer.prototype.swapImages = function(d){
 			$(this).attr('src',src2x);
 		})
 		.promise().done( function(){ 
-			grid.masonry({
+			$('.grid').masonry({
 			  //isInitLayout: false,
 			  itemSelector: '.item',
 			  //layoutMode: 'fitRows',
@@ -122,8 +122,22 @@ var player;
 
 $(function() {
 	
-	if(mmb.isHighDensity()){mmb.swapImages(1);
+	/*if(mmb.isHighDensity()){mmb.swapImages(1);
 	}else{mmb.swapImages(0);}
+	*/
+
+	var $grid = $('.grid').imagesLoaded( function() {
+	  
+	  $grid.masonry({
+	    //isInitLayout: false,
+				  itemSelector: '.item',
+				  //layoutMode: 'fitRows',
+				  percentPosition:true,
+				  horizontalOrder: true,
+				  
+				  columnWidth:'.grid-sizer'
+	  });
+	});
 	
 
 	//hash menu opener
