@@ -122,22 +122,19 @@ var player;
 
 $(function() {
 	
-	/*if(mmb.isHighDensity()){mmb.swapImages(1);
-	}else{mmb.swapImages(0);}
-	*/
-
-	var $grid = $('.grid').imagesLoaded( function() {
-	  
-	  $grid.masonry({
-	    //isInitLayout: false,
-				  itemSelector: '.item',
-				  //layoutMode: 'fitRows',
-				  percentPosition:true,
-				  horizontalOrder: true,
-				  
-				  columnWidth:'.grid-sizer'
-	  });
-	});
+	if(! mmb.isMobileMode()){
+		var $grid = $('.grid').imagesLoaded( function() {
+		  
+		  $grid.masonry({
+		    //isInitLayout: false,
+			itemSelector: '.item',
+			//layoutMode: 'fitRows',
+			percentPosition:true,
+			horizontalOrder: true,
+			columnWidth:'.grid-sizer'
+		  });
+		});
+	}
 	
 
 	//hash menu opener
