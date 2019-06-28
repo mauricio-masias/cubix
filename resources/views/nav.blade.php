@@ -87,6 +87,18 @@
                     </ul>
                 </li>
 
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            Galleries <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url('/menus') }}">Galleries</a></li>
+                            <li><a href="{{ url('/menus/create') }}">Create Gallery</a></li>
+                        </ul>
+                    </li>
+
 
                 <li class="dropdown" style="border-left: 1px solid #d3e0e9;">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">

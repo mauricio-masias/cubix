@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ config('app.name') }} : Edit Category</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
   </head>
   <body>
 
@@ -74,6 +74,6 @@
       
       </form>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
+
   </body>
 </html>

@@ -11,10 +11,6 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 
 
 Auth::routes();
@@ -25,12 +21,17 @@ Route::get('/djs', 'DjsController@index')->name('djs');
 Route::get('/live-musicians', 'LiveMusiciansController@index')->name('live-musicians');
 Route::get('/gallery/{chapter?}', 'GalleryController@index')->name('gallery');
 
+//Chapter section
+
+
 Route::resource('projects','ProjectController');
 Route::resource('categories','CategoryController');
 Route::resource('menus','MenuController');
 Route::resource('boxes','BoxController');
 Route::resource('jobs','JobController');
 Route::resource('pages','PageController');
+Route::resource('galleries','GalleryAdminController');
+Route::post('image/do-upload', 'GalleryAdminController@doImageUpload');
 
 Route::get('img/chapters/{dir}/{filename}', function ($dir, $filename)
 {

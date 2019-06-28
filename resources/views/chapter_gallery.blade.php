@@ -20,7 +20,9 @@
        
     </div>
     
-
+    @foreach($media as $image)
+        <p>{{$image->file_name}}</p>
+    @endforeach
     <section class="gallery">
         <div class="grid">
 
@@ -31,7 +33,7 @@
                 <div class="item @if($i % 100 == 0) item--width2 @endif">
                     <div class="cont">
                             
-                        <a class="imgcontainer"><img src="{{ asset('img/chapters/'.$folder.'/snap'.$i.'.jpg')}}" alt="image title" /></a>
+                        <a class="imgcontainer"><img src="{{ asset('img/chapters/'.$folder.'/snap'.$i.'.jpg')}}" alt="{{$site['page_title']}}: {{$page['page_title']}}" data-lightbox="{{$page['page_title']}}"/></a>
 
                     </div>
                 </div>

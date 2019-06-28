@@ -1,4 +1,4 @@
-<!-- index.blade.php -->
+<!-- galleryMaster.blade.php -->
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <title>{{ config('app.name') }} : Projects</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
@@ -112,7 +112,6 @@
 
     </div>
 
-  <script src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>
 

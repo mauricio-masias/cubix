@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 
-use App\Project;
+use App\Gallery;
+use App\Media;
 use App\Page;
 
 class GalleryController extends Controller
@@ -25,14 +26,15 @@ class GalleryController extends Controller
 
     public function index($chapter = 0)
     {
+        $slug = ($chapter == 0)? 'chapter-1' : str_replace(" ", "-", strtolower($chapter));
 
-    	//$projects = Project::all()->where('project_active', '=', 1)->sortByDesc('project_order')->toArray();
-
-        //$categories = Category::all()->where('category_active', '=', 1)->sortByDesc('category_order')->toArray();
-        //$boxes = Box::all()->where('box_active', '=', 1)->toArray();
-        //$jobs = Job::all()->where('job_active', '=', 1)->sortByDesc('job_order')->toArray();
-        //$menus = Menu::all()->where('menu_active', '=', 1)->sortBy('menu_id')->toArray();
         $pagex = Page::all()->toArray();
+
+        $gallery = Gallery::all()->where('slug', '=', $slug)
+                                 ->where('active', '=', 1);
+
+        $media = Media::all()->where('gallery_id', '=', $gallery[0]->id);
+
         $site = $pagex[0];
         $page = $pagex[3];
 
@@ -40,6 +42,6 @@ class GalleryController extends Controller
         $folder = ($chapter == 0)? 'chapter1' : str_replace("-", "", $chapter);
 
 
-        return view('gallery_1',compact('site','page','folder'));
+        return view('chapter_gallery',compact('site','page','folder','media'));
     }
 }

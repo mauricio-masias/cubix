@@ -21,6 +21,7 @@
                         <a href="{{ url('/pages') }}">Pages</a>
                         <a href="{{ url('/boxes') }}">Boxes</a>
                         <a href="{{ url('/menus') }}">Menu</a>
+                        <a href="{{ url('/galleries') }}">Galleries</a>
                     </section>
 
                 </div>

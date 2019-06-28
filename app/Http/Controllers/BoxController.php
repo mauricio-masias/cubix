@@ -54,8 +54,6 @@ class BoxController extends Controller
         
         $user->save();
 
-        //Box::create($box);
-
         return back()->with('success', 'Box has been added');
     }
 
