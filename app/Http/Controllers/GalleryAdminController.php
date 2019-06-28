@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Gallery;
+use App\Media;
 use Illuminate\Http\Request;
 
 class GalleryAdminController extends Controller
@@ -21,7 +22,17 @@ class GalleryAdminController extends Controller
 
     }
 
-    public function store(Request $request){
+
+    public function edit($id)
+    {
+        $galleries = Gallery::all();
+        $gallery_to_update = Gallery::find($id);
+
+        return view('galleries.index',compact('galleries', 'gallery_to_update','id'));
+    }
+
+    public function store(Request $request)
+    {
 
         $this->validate(request(), [
             'gallery_name' => 'required|min:3'
@@ -83,6 +94,30 @@ class GalleryAdminController extends Controller
         ]);
 
         return $image;
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id, $type)
+    {
+        if($type == 'gallery'){
+
+            $gallery = Gallery::find($id);
+            $gallery->delete();
+            return redirect('galleries')->with('success','Gallery has been deleted');
+
+        }else{
+
+            $media = Media::find($id);
+            $media->delete();
+            return redirect('galleries')->with('success','Image has been deleted');
+
+        }
 
     }
 }

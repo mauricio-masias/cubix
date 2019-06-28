@@ -31,6 +31,13 @@
 
                    <div class="item" >
                        <img src="{{ asset($image->file_path . $image->file_name) }}" alt="{{$gallery->name}}">
+                       <div class="action_overlay">
+                           <form action="{{action('GalleryAdminController@destroy',$image->id, 'image')}}" method="post" style="display: inline-block;">
+                               {{csrf_field()}}
+                               <input name="_method" type="hidden" value="DELETE">
+                               <button class="btn btn-danger" type="submit">Delete</button>
+                           </form>
+                       </div>
                    </div>
 
                @endforeach
