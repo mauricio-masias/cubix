@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <title>{{ config('app.name') }} : Pages</title>
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+
   </head>
   
   <body>

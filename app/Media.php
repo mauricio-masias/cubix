@@ -8,7 +8,7 @@ class Media extends Model
 {
     protected $table = 'media';
 
-    protected $fillable = ['file_name','file_size','file_mime','file_path','created_by'];
+    protected $fillable = ['gallery_id','file_name','file_size','file_mime','file_path','file_order','created_by'];
 
     public function gallery(){
 

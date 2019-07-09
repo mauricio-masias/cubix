@@ -5,6 +5,8 @@
     <title>{{ config('app.name') }} : Galleries</title>
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.css">
+
+
   </head>
   
   <body>

@@ -91,6 +91,7 @@ class GalleryAdminController extends Controller
             'file_size' => $file->getClientSize(),
             'file_mime' => $file->getClientMimeType(),
             'file_path' => $path,
+            //'file_order'=> $request->input('order'),
             'created_by' => \Auth::user()->id
         ]);
 

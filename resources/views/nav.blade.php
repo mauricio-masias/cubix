@@ -94,8 +94,7 @@
                         </a>
 
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url('/menus') }}">Galleries</a></li>
-                            <li><a href="{{ url('/menus/create') }}">Create Gallery</a></li>
+                            <li><a href="{{ url('/galleries') }}">Galleries</a></li>
                         </ul>
                     </li>
 

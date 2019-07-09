@@ -85,7 +85,7 @@
           <tr class="ui-state-default" rel="{{$project['project_id']}}">
             <td class="mobile_hide">{{$project['project_id']}}</td>
             <td>{{$project['project_name']}}</td>
-            <td><img src="{{$project['project_image']}}"></td>
+            <td><img src="{{$project['project_image']}}" style="width:100px"></td>
             <td>@if($project['project_url'] == '#') # @else <a href="{{$project['project_url']}}" target="_blank" title="{{$project['project_url']}}">Link</a> @endif</td>
             <td>{{$project['project_teaser']}}</td>
             <td class="mobile_hide">{{strlen($project['project_text'])}} Chars</td>

@@ -40,12 +40,13 @@
 
                @forelse($gallery->media as $image)
 
-                   <div class="item list-group-item" >
+                   <div class="item list-group-item" rel="{{$image->id}}">
                        <img src="{{ asset($image->file_path . $image->file_name) }}" alt="{{$gallery->name}}">
                        <div class="action_overlay">
                            <form action="{{action('GalleryAdminController@destroy',$image->id)}}" method="post" style="display: inline-block;">
                                {{csrf_field()}}
                                <input name="_method" type="hidden" value="DELETE">
+                               <input name="order" type="hidden" value="$image->file_order">
                                <button class="btn btn-danger" type="submit">X</button>
                            </form>
                        </div>

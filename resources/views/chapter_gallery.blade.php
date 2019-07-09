@@ -31,7 +31,7 @@
                 <div class="item">
                     <div class="cont">
                             
-                        <a class="imgcontainer"><img src="{{asset($image->file_path.$image->file_name)}}" alt="{{$site['page_title']}}: {{$page['page_title']}}" data-lightbox="{{$page['page_title']}}"/></a>
+                        <a href="{{asset($image->file_path.$image->file_name)}}" class="imgcontainer" data-lightbox="{{$page['page_title']}}"><img src="{{asset($image->file_path.$image->file_name)}}" alt="{{$site['page_title']}}: {{$page['page_title']}}" /></a>
 
                     </div>
                 </div>

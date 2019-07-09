@@ -20,6 +20,7 @@ class CreateMediaTable extends Migration
             $table->string('file_size',10);
             $table->string('file_mime',50);
             $table->string('file_path');
+            $table->string('file_order',10);
             $table->integer('created_by');
             $table->timestamps();
         });
