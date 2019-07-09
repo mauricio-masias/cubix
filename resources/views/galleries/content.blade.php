@@ -5,12 +5,23 @@
     <h2>Gallery: {{ $gallery->name }} | <a href="{{ url('/galleries') }}"> < Back&nbsp;</a></h2>
     <hr>
 
+    <div id="gallery_messages">
     @if (\Session::has('success'))
         <div class="alert alert-success">
             <p>{{ \Session::get('success') }}</p>
         </div><br />
     @endif
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div><br />
+    @endif
+    </div>
 
     <div class="row">
         <div class="col-md-12">
@@ -25,28 +36,31 @@
 
     <div class="row">
         <div class="col-md-12">
-           <div id="cms-gallery-images">
+           <div id="cms-gallery-images" class="list-group">
 
-               @foreach($gallery->media as $image)
+               @forelse($gallery->media as $image)
 
-                   <div class="item" >
+                   <div class="item list-group-item" >
                        <img src="{{ asset($image->file_path . $image->file_name) }}" alt="{{$gallery->name}}">
                        <div class="action_overlay">
-                           <form action="{{action('GalleryAdminController@destroy',$image->id, 'image')}}" method="post" style="display: inline-block;">
+                           <form action="{{action('GalleryAdminController@destroy',$image->id)}}" method="post" style="display: inline-block;">
                                {{csrf_field()}}
                                <input name="_method" type="hidden" value="DELETE">
-                               <button class="btn btn-danger" type="submit">Delete</button>
+                               <button class="btn btn-danger" type="submit">X</button>
                            </form>
                        </div>
                    </div>
 
-               @endforeach
+               @empty
+                   <p class="no_images">No images found.</p>
+               @endforelse
 
            </div>
         </div>
     </div>
 
-    <script>var filepath = '{{ asset($image->file_path) }}/';</script>
+
+    <script>var basepath = '{{URL::to('/')}}/';</script>
 
 
 

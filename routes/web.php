@@ -30,7 +30,10 @@ Route::resource('menus','MenuController');
 Route::resource('boxes','BoxController');
 Route::resource('jobs','JobController');
 Route::resource('pages','PageController');
+
+Route::delete('galleries/destroyGallery/{gallery}', 'GalleryAdminController@destroyGallery')->name('galleries.destroyGallery');
 Route::resource('galleries','GalleryAdminController');
+
 Route::post('image/do-upload', 'GalleryAdminController@doImageUpload');
 
 Route::get('img/chapters/{dir}/{filename}', function ($dir, $filename)

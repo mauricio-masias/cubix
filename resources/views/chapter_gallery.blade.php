@@ -19,26 +19,24 @@
         </div>
        
     </div>
-    
-    @foreach($media as $image)
-        <p>{{$image->file_name}}</p>
-    @endforeach
+
+
     <section class="gallery">
         <div class="grid">
 
 
             <div class="grid-sizer"></div>
-            @for($i = 1; $i <= 15; $i++)
-                
-                <div class="item @if($i % 100 == 0) item--width2 @endif">
+            @foreach($media as $image)
+
+                <div class="item">
                     <div class="cont">
                             
-                        <a class="imgcontainer"><img src="{{ asset('img/chapters/'.$folder.'/snap'.$i.'.jpg')}}" alt="{{$site['page_title']}}: {{$page['page_title']}}" data-lightbox="{{$page['page_title']}}"/></a>
+                        <a class="imgcontainer"><img src="{{asset($image->file_path.$image->file_name)}}" alt="{{$site['page_title']}}: {{$page['page_title']}}" data-lightbox="{{$page['page_title']}}"/></a>
 
                     </div>
                 </div>
 
-            @endfor
+            @endforeach
 
         </div>
     </section>

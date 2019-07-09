@@ -18,6 +18,9 @@
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
+
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+
     <script type="text/javascript" src="{{asset('js/admin.js')}}"></script>
   </body>
 </html>
