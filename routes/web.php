@@ -15,26 +15,26 @@
 
 Auth::routes();
 
-Route::get('/', 'WelcomeController@index')->name('index');
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/djs', 'DjsController@index')->name('djs');
-Route::get('/live-musicians', 'LiveMusiciansController@index')->name('live-musicians');
-Route::get('/gallery/{chapter?}', 'GalleryController@index')->name('gallery');
+Route::get('/', 'FE\WelcomeController@index')->name('index');
+Route::get('/home', 'FE\HomeController@index')->name('home');
+Route::get('/djs', 'FE\DjsController@index')->name('djs');
+Route::get('/live-musicians', 'FE\LiveMusiciansController@index')->name('live-musicians');
+Route::get('/gallery/{chapter?}', 'FE\GalleryController@index')->name('gallery');
 
 //Chapter section
 
 
-Route::resource('projects','ProjectController');
-Route::resource('categories','CategoryController');
-Route::resource('menus','MenuController');
-Route::resource('boxes','BoxController');
-Route::resource('jobs','JobController');
-Route::resource('pages','PageController');
+Route::resource('projects','Admin\ProjectController');
+Route::resource('categories','Admin\CategoryController');
+Route::resource('menus','Admin\MenuController');
+Route::resource('boxes','Admin\BoxController');
+Route::resource('jobs','Admin\JobController');
+Route::resource('pages','Admin\PageController');
 
-Route::delete('galleries/destroyGallery/{gallery}', 'GalleryAdminController@destroyGallery')->name('galleries.destroyGallery');
-Route::resource('galleries','GalleryAdminController');
+Route::delete('galleries/destroyGallery/{gallery}', 'Admin\GalleryAdminController@destroyGallery')->name('galleries.destroyGallery');
+Route::resource('galleries','Admin\GalleryAdminController');
 
-Route::post('image/do-upload', 'GalleryAdminController@doImageUpload');
+Route::post('image/do-upload', 'Admin\GalleryAdminController@doImageUpload');
 
 Route::get('img/chapters/{dir}/{filename}', function ($dir, $filename)
 {
@@ -71,6 +71,6 @@ Route::get('img/portfolio/{filename}', function ($filename)
 });
 
 
-Route::post('/getmsg','AjaxController@index');
-Route::post('/new-gallery-order','AjaxController@newGalleryOrder');
+Route::post('/getmsg','Admin\AjaxController@index');
+Route::post('/new-gallery-order','Admin\AjaxController@newGalleryOrder');
 

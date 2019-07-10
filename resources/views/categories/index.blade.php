@@ -1,18 +1,6 @@
-<!-- galleryMaster.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Categories</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-  </head>
-  
-  <body>
-    
-    @include('nav')
-
+@section('content')
     <div class="container">
     
       <h2>Categories | <a href="{{ url('/categories/create') }}">&nbsp;+&nbsp;</a></h2>
@@ -48,9 +36,9 @@
             <td>{{$category['category_active']}}</td>
             
 
-            <td><a href="{{action('CategoryController@edit', $category['category_id'])}}" class="btn btn-warning">Edit</a></td>
+            <td><a href="{{action('Admin\CategoryController@edit', $category['category_id'])}}" class="btn btn-warning">Edit</a></td>
             <td>
-              <form action="{{action('CategoryController@destroy', $category['category_id'])}}" method="post">
+              <form action="{{action('Admin\CategoryController@destroy', $category['category_id'])}}" method="post">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Delete</button>
@@ -62,8 +50,5 @@
 
       </table>
     </div>
-
-  </body>
-  
-</html>
+@endsection
 

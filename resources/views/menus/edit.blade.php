@@ -1,16 +1,6 @@
-<!-- edit.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Edit Menu</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-  </head>
-  <body>
-
-    @include('nav')
-
+@section('content')
     <div class="container">
       <h2>Edit Menu | <a href="{{ url('/menus') }}"> &lt; Back</a></h2>
       <hr>
@@ -23,7 +13,7 @@
           </ul>
       </div><br />
       @endif
-      <form method="post" action="{{action('MenuController@update', $id)}}">
+      <form method="post" action="{{action('Admin\MenuController@update', $id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         
@@ -114,6 +104,4 @@
       
       </form>
     </div>
-
-  </body>
-</html>
+@endsection

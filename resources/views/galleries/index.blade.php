@@ -1,8 +1,8 @@
-@extends('galleries.galleryMaster')
+@extends('layouts.galleriesAdmin')
 
 @section('content')
 
-    <h2>Galleries | <a href="{{ url('/galleries/create') }}"> &nbsp;+&nbsp;</a></h2>
+    <h2>Galleries </h2>
     <hr>
 
     @if (\Session::has('success'))
@@ -28,7 +28,7 @@
                 <table class="table table-striped table-bordered table-responsive">
                     <thead>
                     <tr>
-                        <th>Gallery name</th>
+                        <th>Name <span class="pull-right">Images</span></th>
                         <th></th>
                     </tr>
                     </thead>
@@ -38,8 +38,8 @@
                             <td>{{$gallery->name}}
                                 <span class="pull-right">{{$gallery->media()->count()}}</span>
                             </td>
-                            <td><a href="{{action('GalleryAdminController@show', $gallery->id)}}" class="btn btn-primary">View</a>
-                                <a href="{{action('GalleryAdminController@edit', $gallery->id)}}" class="btn btn-warning">Edit</a>
+                            <td><a href="{{action('Admin\GalleryAdminController@show', $gallery->id)}}" class="btn btn-primary">View</a>
+                                <a href="{{action('Admin\GalleryAdminController@edit', $gallery->id)}}" class="btn btn-warning">Edit</a>
                                 <form action="{{ route('galleries.destroyGallery', ['gallery' => $gallery->id]) }}" method="post" style="display: inline-block;">
                                     {{csrf_field()}}
                                     <input name="_method" type="hidden" value="DELETE">
@@ -59,7 +59,7 @@
 
             @if(isset($id))
 
-            <form method="post" action="{{action('GalleryAdminController@update', $id)}}">
+            <form method="post" action="{{action('Admin\GalleryAdminController@update', $id)}}">
                 <input name="_method" type="hidden" value="PATCH">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -83,7 +83,7 @@
 
             @else
 
-            <form class="form" method="post" action="{{action('GalleryAdminController@store')}}">
+            <form class="form" method="post" action="{{action('Admin\GalleryAdminController@store')}}">
 
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

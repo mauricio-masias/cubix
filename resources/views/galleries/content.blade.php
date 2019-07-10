@@ -1,4 +1,4 @@
-@extends('galleries.galleryMaster')
+@extends('layouts.galleriesAdmin')
 
 @section('content')
 
@@ -43,7 +43,7 @@
                    <div class="item list-group-item" rel="{{$image->id}}">
                        <img src="{{ asset($image->file_path . $image->file_name) }}" alt="{{$gallery->name}}">
                        <div class="action_overlay">
-                           <form action="{{action('GalleryAdminController@destroy',$image->id)}}" method="post" style="display: inline-block;">
+                           <form action="{{action('Admin\GalleryAdminController@destroy',$image->id)}}" method="post" style="display: inline-block;">
                                {{csrf_field()}}
                                <input name="_method" type="hidden" value="DELETE">
                                <input name="order" type="hidden" value="$image->file_order">

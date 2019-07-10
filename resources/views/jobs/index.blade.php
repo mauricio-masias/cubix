@@ -1,18 +1,6 @@
-<!-- galleryMaster.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Jobs</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-  </head>
-  
-  <body>
-    
-    @include('nav')
-
+@section('content')
     <div class="container">
     
       <h2>Jobs | <a href="{{ url('/jobs/create') }}"> &nbsp;+&nbsp;</a></h2>
@@ -52,9 +40,9 @@
             <td>{{$job['job_order']}}</td>
             <td>{{$job['job_active']}}</td>
 
-            <td><a href="{{action('JobController@edit', $job['job_id'])}}" class="btn btn-warning">Edit</a></td>
+            <td><a href="{{action('Admin\JobController@edit', $job['job_id'])}}" class="btn btn-warning">Edit</a></td>
             <td>
-              <form action="{{action('JobController@destroy', $job['job_id'])}}" method="post">
+              <form action="{{action('Admin\JobController@destroy', $job['job_id'])}}" method="post">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Delete</button>
@@ -66,7 +54,5 @@
 
       </table>
     </div>
-
-  </body>
-</html>
+@endsection
 

@@ -1,18 +1,6 @@
-<!-- galleryMaster.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Boxes</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-  </head>
-  
-  <body>
-    
-    @include('nav')
-
+@section('content')
     <div class="container">
     
       <h2>Boxes | <a href="{{ url('/boxes/create') }}"> &nbsp;+&nbsp;</a></h2>
@@ -44,9 +32,9 @@
             <td>{{strlen($box['box_content'])}} Chars</td>
             <td>{{$box['box_active']}}</td>
 
-            <td><a href="{{action('BoxController@edit', $box['box_id'])}}" class="btn btn-warning">Edit</a></td>
+            <td><a href="{{action('Admin\BoxController@edit', $box['box_id'])}}" class="btn btn-warning">Edit</a></td>
             <td>
-              <form action="{{action('BoxController@destroy', $box['box_id'])}}" method="post">
+              <form action="{{action('Admin\BoxController@destroy', $box['box_id'])}}" method="post">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Delete</button>
@@ -58,7 +46,5 @@
 
       </table>
     </div>
-
-  </body>
-</html>
+@endsection
 

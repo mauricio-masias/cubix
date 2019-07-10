@@ -1,18 +1,6 @@
-<!-- create.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Create Category</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-  </head>
-
-  <body>
-
-    @include('nav')
-
+@section('content')
     <div class="container">
       <h2>Create Category | <a href="{{ url('/categories') }}"> &lt; Back</a></h2><br />
       <hr>
@@ -78,6 +66,4 @@
       </form>
 
     </div>
-
-  </body>
-</html>
+@endsection

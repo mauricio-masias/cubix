@@ -1,19 +1,6 @@
-<!-- galleryMaster.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Pages</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-
-  </head>
-  
-  <body>
-    
-    @include('nav')
-
+@section('content')
     <div class="container">
     
       <h2>Pages | <a href="{{ url('/pages/create') }}"> &nbsp;+&nbsp;</a></h2>
@@ -99,8 +86,8 @@
           </tr>
           <tr>
             <th>Action</th>
-            <td><a href="{{action('PageController@edit', $page['id'])}}" class="btn btn-warning">Edit</a> 
-              <form action="{{action('PageController@destroy', $page['id'])}}" method="post" style="display: inline-block;">
+            <td><a href="{{action('Admin\PageController@edit', $page['id'])}}" class="btn btn-warning">Edit</a>
+              <form action="{{action('Admin\PageController@destroy', $page['id'])}}" method="post" style="display: inline-block;">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Delete</button>
@@ -111,7 +98,5 @@
       </table>
       @endforeach
     </div>
-
-  </body>
-</html>
+@endsection
 

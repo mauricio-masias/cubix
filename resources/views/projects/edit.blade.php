@@ -1,16 +1,6 @@
-<!-- edit.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Projects Edit</title>
-    <link rel="stylesheet" href="{{asset('css/admin.css')}}">
-  </head>
-  <body>
-
-    @include('nav')
-
+@section('content')
     <div class="container">
       <h2>Edit Project | <a href="{{ url('/projects') }}"> &lt; Back</a></h2>
       <hr>
@@ -23,7 +13,7 @@
           </ul>
       </div><br />
       @endif
-      <form method="post" action="{{action('ProjectController@update', $id)}}" enctype="multipart/form-data">
+      <form method="post" action="{{action('Admin\ProjectController@update', $id)}}" enctype="multipart/form-data">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         
@@ -117,6 +107,4 @@
       
       </form>
     </div>
-
-  </body>
-</html>
+@endsection
