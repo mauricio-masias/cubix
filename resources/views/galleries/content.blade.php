@@ -38,7 +38,7 @@
         <div class="col-md-12">
            <div id="cms-gallery-images" class="list-group">
 
-               @forelse($gallery->media as $image)
+               @forelse($media as $image)
 
                    <div class="item list-group-item" rel="{{$image->id}}">
                        <img src="{{ asset($image->file_path . $image->file_name) }}" alt="{{$gallery->name}}">
@@ -59,11 +59,4 @@
            </div>
         </div>
     </div>
-
-
-    <script>var basepath = '{{URL::to('/')}}/';</script>
-
-
-
-
 @endsection

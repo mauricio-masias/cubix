@@ -58,8 +58,9 @@ class GalleryAdminController extends Controller
     {
 
         $gallery = Gallery::findOrFail($id);
+        $media = Media::all()->where('gallery_id','=',$gallery->id)->sortByDesc('file_order');
 
-        return view('galleries.content', compact('gallery'));
+        return view('galleries.content', compact('gallery','media'));
 
     }
 
@@ -93,7 +94,6 @@ class GalleryAdminController extends Controller
             'file_size' => $file->getClientSize(),
             'file_mime' => $file->getClientMimeType(),
             'file_path' => $path,
-            //'file_order'=> $request->input('order'),
             'created_by' => \Auth::user()->id
         ]);
 

@@ -6,13 +6,13 @@
       <h2>Projects | <a href="{{ url('/projects/create') }}"> &nbsp;+&nbsp;</a></h2>
       <hr>
 
+      <div id='msg'>
       @if (\Session::has('success'))
         <div class="alert alert-success" id='msg'>
           <p>{{ \Session::get('success') }}</p>
         </div><br />
        @endif
-      
-      <div id='msg'></div>
+      </div>
 
       <table class="table table-striped">
         

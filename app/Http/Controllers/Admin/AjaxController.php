@@ -23,7 +23,7 @@ class AjaxController extends Controller
         	$order--;
       	}
       	
-      	$status ($order==1)? 'ok':'ko';
+      	$status = ($order==0)? 'ok':'ko';
       	$error = "Ordering failed.";
 
       return response()->json(array('status'=> $status,'error'=>$error), 200);
@@ -36,17 +36,17 @@ class AjaxController extends Controller
         $order = count($ids);
         foreach($ids as $id){
 
-            $project = Media::find($id);
-            $project->project_order= $order;
-            $project->save();
+            $image = Media::find($id);
+            $image->file_order= $order;
+            $image->save();
 
             $order--;
         }
 
-        $status ($order==1)? 'ok':'ko';
+        $status =  ($order==0)? 'ok':'ko';
         $error = "Ordering failed.";
 
-        return response()->json(array('status'=> $status,'error'=>$error), 200);
+        return response()->json(array('status'=> $status,'error'=>$error.$order), 200);
     }
 }
 

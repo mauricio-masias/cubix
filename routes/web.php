@@ -71,6 +71,6 @@ Route::get('img/portfolio/{filename}', function ($filename)
 });
 
 
-Route::post('/getmsg','Admin\AjaxController@index');
+Route::post('/new-project-order','Admin\AjaxController@index');
 Route::post('/new-gallery-order','Admin\AjaxController@newGalleryOrder');
 
