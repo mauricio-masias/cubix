@@ -16,7 +16,7 @@
 Auth::routes();
 
 Route::get('/', 'FE\WelcomeController@index')->name('index');
-Route::get('/home', 'FE\HomeController@index')->name('home');
+Route::get('/home', 'Admin\HomeController@index')->name('home');
 Route::get('/djs', 'FE\DjsController@index')->name('djs');
 Route::get('/live-musicians', 'FE\LiveMusiciansController@index')->name('live-musicians');
 Route::get('/gallery/{chapter?}', 'FE\GalleryController@index')->name('gallery');
