@@ -24,10 +24,8 @@
     <section class="gallery">
         <div class="grid">
 
-
             <div class="grid-sizer"></div>
-            @foreach($media as $image)
-
+            @forelse ($media as $image)
                 <div class="item">
                     <div class="cont">
                             
@@ -35,8 +33,13 @@
 
                     </div>
                 </div>
+            @empty
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <p class="description" style="max-width:100%"> This gallery in being updated, please comeback soon.</p>
+                </div>
+            @endforelse
 
-            @endforeach
+            
 
         </div>
     </section>

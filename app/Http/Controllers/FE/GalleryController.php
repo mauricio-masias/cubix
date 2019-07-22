@@ -27,21 +27,20 @@ class GalleryController extends Controller
 
     public function index($chapter = 0)
     {
-        $slug = ($chapter == 0)? 'chapter-1' : str_replace(" ", "-", strtolower($chapter));
-
+       
+        $slug = ($chapter === 0)? 'chapter-1' : str_replace(" ", "-", strtolower($chapter));
+        $folder = ($chapter === 0)? 'chapter1' : str_replace("-", "", $chapter);
+        
         $pagex = Page::all()->toArray();
+        $site = $pagex[0];
+        $page = $pagex[3];
 
         $gallery = Gallery::all()->where('slug', '=', $slug)
                                  ->where('active', '=', 1);
 
-        $media = Media::all()->where('gallery_id', '=', $gallery[0]->id);
-
-        $site = $pagex[0];
-        $page = $pagex[3];
-
-
-        $folder = ($chapter == 0)? 'chapter1' : str_replace("-", "", $chapter);
-
+        $gallery_id = (count($gallery) > 0)? $gallery[0]->id : 0;
+                                 
+        $media = Media::all()->where('gallery_id', '=', $gallery_id);
 
         return view('chapter_gallery',compact('site','page','folder','media'));
     }
