@@ -17,22 +17,27 @@
 
     <div class="row belowheader">
         <div class="col-sm-12 col-md-12 col-lg-12 date">
-            {!! $boxes[0]['box_content'] !!}
+            @if($boxes[0]['box_active'] == 1)
+                {!! $boxes[0]['box_content'] !!}
+            @endif
         </div>
     </div>
 
 
     <div class="row boxes">
         <div class="col-sm-12 col-md-6 col-lg-4 box b1">
-            <div>{!! $boxes[1]['box_content'] !!}</div>
+            <div>@if($boxes[1]['box_active'] == 1)
+                {!! $boxes[1]['box_content'] !!} 
+                @endif
+            </div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-4 box b2">
-             <div>{!! $boxes[2]['box_content'] !!}</div>
+             <div>@if($boxes[2]['box_active'] == 1){!! $boxes[2]['box_content'] !!} @endif</div>
         </div>
 
         <div class="col-sm-12 col-md-6 col-lg-4 box b3">
-             <div>{!! $boxes[3]['box_content'] !!}</div>
+             <div>@if ($boxes[3]['box_active'] == 1){!! $boxes[3]['box_content'] !!} @endif</div>
         </div>
     </div>
 

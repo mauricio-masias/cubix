@@ -1,17 +1,6 @@
-<!-- index.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Menus</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  
-  <body>
-    
-    @include('nav')
+@section('content')
 
     <div class="container">
     
@@ -54,9 +43,9 @@
             <td>{{$menu['menu_order']}}</td>
             <td>{{$menu['menu_active']}}</td>
 
-            <td><a href="{{action('MenuController@edit', $menu['menu_id'])}}" class="btn btn-warning">Edit</a></td>
+            <td><a href="{{action('Admin\MenuController@edit', $menu['menu_id'])}}" class="btn btn-warning">Edit</a></td>
             <td>
-              <form action="{{action('MenuController@destroy', $menu['menu_id'])}}" method="post">
+              <form action="{{action('Admin\MenuController@destroy', $menu['menu_id'])}}" method="post">
                 {{csrf_field()}}
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Delete</button>
@@ -68,7 +57,5 @@
 
       </table>
     </div>
-  <script src="{{ asset('js/app.js') }}"></script>
-  </body>
-</html>
+@endsection
 

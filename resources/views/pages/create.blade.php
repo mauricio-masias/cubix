@@ -1,21 +1,10 @@
-<!-- create.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Create Page</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-
-  <body>
-
-    @include('nav')
-
+@section('content')
     <div class="container">
       <h2>Create Page | <a href="{{ url('/pages') }}"> &lt; Back</a></h2><br />
       <hr>
+
       @if ($errors->any())
       <div class="alert alert-danger">
           <ul>
@@ -181,6 +170,4 @@
       </form>
 
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-  </body>
-</html>
+@endsection

@@ -1,18 +1,6 @@
-<!-- create.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Create Box</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-
-  <body>
-
-    @include('nav')
-
+@section('content')
     <div class="container">
       <h2>Create Box | <a href="{{ url('/boxes') }}"> &lt; Back</a></h2><br />
       <hr>
@@ -74,6 +62,4 @@
       </form>
 
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-  </body>
-</html>
+@endsection

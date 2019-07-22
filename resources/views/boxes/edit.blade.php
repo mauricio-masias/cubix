@@ -1,16 +1,6 @@
-<!-- edit.blade.php -->
+@extends('layouts.app')
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name') }} : Edit Box</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
-
-    @include('nav')
-
+@section('content')
     <div class="container">
       <h2>Edit Box | <a href="{{ url('/boxes') }}"> &lt; Back</a></h2>
       <hr>
@@ -23,7 +13,7 @@
           </ul>
       </div><br />
       @endif
-      <form method="post" action="{{action('BoxController@update', $id)}}">
+      <form method="post" action="{{action('Admin/BoxController@update', $id)}}">
         {{csrf_field()}}
         <input name="_method" type="hidden" value="PATCH">
         
@@ -68,6 +58,4 @@
       
       </form>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
-  </body>
-</html>
+@endsection
