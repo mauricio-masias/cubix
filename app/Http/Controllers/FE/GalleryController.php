@@ -37,9 +37,10 @@ class GalleryController extends Controller
         $page = $pagex[3];
 
         $gallery = Gallery::all()->where('slug', '=', $slug)
-                                 ->where('active', '=', 1);
+                                 ->where('active', '=', 1)
+                                 ->first();
 
-        $gallery_id = (count($gallery) > 0)? $gallery[0]->id : 0;
+        $gallery_id = (is_object($gallery))? $gallery->id : 0;
                                  
         $media = Media::all()->where('gallery_id', '=', $gallery_id);
 
