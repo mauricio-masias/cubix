@@ -21,6 +21,8 @@
     },
     "autoload": {
         "classmap": [
+            "app/Http/Controllers/FE",
+            "app/Http/Controllers/Admin",
             "database/seeds",
             "database/factories"
         ],

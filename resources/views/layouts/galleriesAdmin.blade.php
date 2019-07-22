@@ -48,13 +48,13 @@
         handleError: function (response) {
 
           var wrap = $('#gallery_messages');
-          $(wrap).append('<div class="alert alert-danger"><ul><li>' + response + '</li></ul></div><br />');
+          $(wrap).append('<div class="alert alert-danger"><ul><li>' + response.message + '</li></ul></div><br />');
         },
         handleSuccess: function (response) {
 
           $('.no_images').hide();
           var wrap = $('#cms-gallery-images');
-          var src = '{{ url('/') }}' + response.file_path + response.file_name;
+          var src = '{{ url('/') }}' +'/'+ response.file_path + response.file_name;
 
           var mini_form = '<div class="action_overlay"><form action="' + response.action + response.id + '" method="post" style="display: inline-block;">';
           mini_form += '<input type="hidden" name="_token" value="' + response.csrf + '">';
