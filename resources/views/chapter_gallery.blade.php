@@ -7,7 +7,7 @@
  
     <div class="row header">
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <h1>{{$page['page_title']}}</h1>
+            <h1>{{$page['page_title']}} {{$chapter}}</h1>
             
         </div>
         <div class="col-sm-12 col-md-12 col-lg-12 desc_container">
