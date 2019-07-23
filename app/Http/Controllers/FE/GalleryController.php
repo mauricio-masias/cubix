@@ -42,7 +42,7 @@ class GalleryController extends Controller
 
         $gallery_id = (is_object($gallery))? $gallery->id : 0;
                                  
-        $media = Media::all()->where('gallery_id', '=', $gallery_id);
+        $media = Media::all()->where('gallery_id', '=', $gallery_id)->sortByDesc('file_order');
 
         return view('chapter_gallery',compact('site','page','folder','media','chapter'));
     }
